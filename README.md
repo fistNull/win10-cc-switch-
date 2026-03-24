@@ -1,5 +1,5 @@
 # ccswitch 工具说明
-
+不知道为哈 配置了cc-switch以后 无法应用成功 没研究明白 只能出此下策了
 这个项目的目的，是让已经通过 `cc-switch` 维护好的供应商配置，能够被本机安装的 `codex`、`claude`、`gemini`、`opencode` 命令行工具直接复用。
 
 核心思路不是修改这些 CLI 的源码，而是覆盖它们在 `node_global` 里的 `.cmd` / `.ps1` 启动脚本。启动时先从 `~/.cc-switch/settings.json` 和 `~/.cc-switch/cc-switch.db` 读取当前选中的 provider，再把对应的 `API Key`、环境变量、`Base URL` 注入进当前进程，然后继续调用原始 CLI。
